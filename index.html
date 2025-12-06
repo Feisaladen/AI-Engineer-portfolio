@@ -1,0 +1,491 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feisal yakub — Portfolio</title>
+  <meta name="description" content="Professional portfolio showcasing projects, skills and contact information." />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (colors + forms + typography)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f172a',
+            accent: '#06b6d4'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    /* Small polished touches */
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
+    .card-focus:focus { outline: 3px solid rgba(6,182,212,0.18); }
+    
+    /* Anime effects */
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(6, 182, 212, 0.6);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes borderGlow {
+      0%, 100% {
+        box-shadow: 0 0 5px rgba(6, 182, 212, 0.3), inset 0 0 5px rgba(6, 182, 212, 0.1);
+      }
+      50% {
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.6), inset 0 0 10px rgba(6, 182, 212, 0.2);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+    
+    .anime-name {
+      animation: slideInDown 0.8s ease-out, glow 3s ease-in-out infinite, float 4s ease-in-out infinite;
+    }
+    
+    .anime-subtitle {
+      animation: slideInLeft 0.9s ease-out 0.1s both;
+    }
+    
+    .anime-description {
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+    
+    .anime-button {
+      animation: scaleIn 0.6s ease-out 0.3s both;
+      transition: all 0.3s ease;
+    }
+    
+    .anime-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(6, 182, 212, 0.3);
+    }
+    
+    .anime-card {
+      animation: fadeInUp 1s ease-out backwards;
+      transition: all 0.3s ease;
+    }
+    
+    .anime-card:hover {
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+      transform: translateY(-4px);
+    }
+    
+    .anime-skill-tag {
+      animation: scaleIn 0.5s ease-out backwards;
+      transition: all 0.3s ease;
+    }
+    
+    .anime-skill-tag:hover {
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+      transform: scale(1.05);
+    }
+    
+    .anime-header {
+      animation: slideInDown 0.8s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-slate-50 text-slate-800 antialiased">
+  <header class="sticky top-0 z-40 bg-white/60 backdrop-blur-sm border-b border-slate-200 anime-header">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3 text-primary font-semibold text-lg">
+        <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">YN</div>
+        <span>Feisal yakub</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-accent">About</a>
+        <a href="#projects" class="hover:text-accent">Projects</a>
+        <a href="#skills" class="hover:text-accent">Skills</a>
+        <a href="#contact" class="hover:text-accent">Contact</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="mobileBtn" class="p-2 rounded-md border">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <!-- HERO -->
+    <section id="hero" class="grid md:grid-cols-2 gap-8 items-center py-12">
+      <div>
+        <p class="text-sm uppercase tracking-wide text-slate-500 anime-subtitle">Hi, my name is Feisal yakub</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold mt-2 anime-name">Feisal Yakub— <span class="text-accent">Software Engineer</span></h1>
+        <p class="mt-4 text-slate-600 max-w-xl anime-description">I build production-ready web applications and AI-powered tools. I focus on high-quality code, scalable architecture, and clean UX. Below are selected projects and details about how I work.</p>
+
+        <div class="mt-6 flex gap-4">
+          <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-accent text-white font-medium shadow anime-button">Contact Me</a>
+          <a href="#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-md border anime-button">View Projects</a>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4 text-sm text-slate-600">
+          <div>
+            <div class="font-semibold">Location</div>
+            <div>Nairobi, Kenya</div>
+          </div>
+          <div>
+            <div class="font-semibold">Availability</div>
+            <div>Open to work</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Email</div>
+            <div>Feisaladen32@gmail.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center">
+        <div class="w-full max-w-md p-6 glass rounded-2xl border border-slate-200 anime-card">
+          <div class="flex items-center gap-4">
+            <img src="profile .jpeg" alt="profile" class="w-20 h-20 rounded-lg object-cover" />
+            <div>
+              <div class="font-semibold text-lg">Feisal Yakub—</div>
+              <div class="text-slate-500 text-sm">Front-end • Full-stack • AI tooling</div>
+            </div>
+          </div>
+
+          <hr class="my-4 border-slate-200" />
+
+          <div class="text-sm text-slate-700">
+            <p><strong>Core stack:</strong> HTML • TailwindCSS • JavaScript • Python</p>
+            <p class="mt-2"><strong>Focus:</strong> Production quality code, testing, deployment pipelines, performance.</p>
+          </div>
+
+          <div class="mt-4 flex gap-2">
+            <a href="#projects" class="text-xs px-3 py-2 rounded-md border">View work</a>
+            <a href="#contact" class="text-xs px-3 py-2 rounded-md border">Hire me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mt-12">
+      <h2 class="text-2xl font-bold">About</h2>
+      <p class="mt-3 text-slate-600 max-w-3xl"> I am an emerging <strong>AI Engineer</strong> skilled in building intelligent systems using <strong>TensorFlow</strong>, modern AI APIs (Gemini), and full-stack JavaScript. I focus on applied AI, developing real-world solutions in health diagnostics, soil restoration, and automation. My strengths include rapid prototyping, AI systems design, and deploying efficient, production-ready models. </p>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-6">
+        <div class="p-4 rounded-lg border glass">
+          <h3 class="font-semibold">What I bring</h3>
+          <ul class="mt-3 list-disc list-inside text-slate-600">
+            <li>Production-grade front-end architecture</li>
+            <li>Component-driven design & accessibility</li>
+            <li>Automated testing and CI/CD</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-lg border glass">
+          <h3 class="font-semibold">How I work</h3>
+          <ul class="mt-3 list-disc list-inside text-slate-600">
+            <li>Start with small, measurable milestones</li>
+            <li>Ship early, measure, and iterate</li>
+            <li>Communicate clearly and document decisions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-10 text-center">Featured Projects</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- Project 1: Afya Link -->
+      <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" onclick="openModal('afyalink')">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Afya Link — AI Telehealth Platform</h3>
+        <p class="text-gray-600 dark:text-gray-300 mt-3">A secure telemedicine platform that uses AI triage agents to reduce wait times and improve patient-doctor communication.</p>
+        <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">Tech: Node.js, Tailwind, AI APIs, Supabase</p>
+      </div>
+
+      <!-- Project 2: M‑Restore -->
+      <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition cursor-pointer" onclick="openModal('mrestore')">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">M‑Restore — AI Soil & Land Analysis</h3>
+        <p class="text-gray-600 dark:text-gray-300 mt-3">An AI-powered agriculture tool that identifies soil type, recommends crops, and provides land restoration insights using image analysis.</p>
+        <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">Tech: Tailwind, Node.js, Supabase Auth, Gemini Vision API, Render</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Project Modals -->
+<div id="afyalink-modal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-6 z-50" onclick="closeModal(event, 'afyalink')">
+  <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl max-w-2xl w-full" onclick="event.stopPropagation()">
+    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Afya Link — AI Telehealth Platform</h3>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">Afya Link streamlines healthcare delivery with AI-powered triage, secure patient records, and real-time doctor communication. Built to address shortages in medical staff and long queues.</p>
+    <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300 mb-4">
+      <li>AI symptom triage</li>
+      <li>Doctor-patient messaging</li>
+      <li>Integrated health dashboards</li>
+      <li>Secure cloud storage</li>
+    </ul>
+    <button onclick="closeModal(null, 'afyalink')" class="px-6 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl">Close</button>
+  </div>
+</div>
+
+<div id="mrestore-modal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-6 z-50" onclick="closeModal(event, 'mrestore')">
+  <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl max-w-2xl w-full" onclick="event.stopPropagation()">
+    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">M‑Restore — AI Soil & Land Analysis</h3>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">M-Restore helps farmers upload soil or land images and instantly get AI-driven insights such as soil type, crop recommendations, and land restoration guidance.</p>
+    <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300 mb-4">
+      <li>AI soil type detection (Clay, Sandy, etc.)</li>
+      <li>Crop recommendations (e.g., tomato, wheat)</li>
+      <li>Land improvement tips</li>
+      <li>GPS-based location insights</li>
+      <li>Supabase authentication + history tracking</li>
+    </ul>
+    <a href="https://m-restorefarmapp.onrender.com" class="px-6 py-2 bg-blue-600 text-white rounded-xl mr-3">Live Demo</a>
+    <button onclick="closeModal(null, 'mrestore')" class="px-6 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl">Close</button>
+  </div>
+</div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="mt-12">
+      <h2 class="text-2xl font-bold anime-description">Skills & Tools</h2>
+      <div class="mt-4 grid sm:grid-cols-2 gap-6">
+        <div class="p-4 rounded-lg border anime-card">
+          <h3 class="font-semibold">Front-end</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">HTML</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Tailwind</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">JavaScript</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">CSS</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-lg border anime-card">
+          <h3 class="font-semibold">Back-end & Deployment</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Node.js</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Python</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Docker</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Supabase</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Render</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-lg border anime-card">
+          <h3 class="font-semibold">AI & Machine Learning</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">TensorFlow</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Keras</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">PyTorch</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Scikit-learn</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">OpenCV</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">NLTK</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Transformers</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-lg border anime-card">
+          <h3 class="font-semibold">Data & Visualization</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Pandas</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">NumPy</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Matplotlib</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Seaborn</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Plotly</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Jupyter</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-lg border anime-card">
+          <h3 class="font-semibold">Data Cleaning & Processing</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Pandas</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">SQL</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Excel</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Regular Expressions</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Beautiful Soup</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Requests</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-lg border anime-card">
+          <h3 class="font-semibold">APIs & Integrations</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Gemini Vision API</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">OpenAI API</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">REST APIs</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Flask</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">FastAPI</span>
+            <span class="px-3 py-1 rounded-full border text-xs anime-skill-tag">Express.js</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mt-12 pb-12">
+      <h2 class="text-2xl font-bold">Contact</h2>
+      <p class="mt-3 text-slate-600">Interested in working together? Fill the form or email me at <strong>you@example.com</strong>.</p>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <form id="contactForm" class="p-6 rounded-lg border bg-white">
+          <label class="block text-sm">Name</label>
+          <input name="name" required class="mt-1 w-full rounded-md border px-3 py-2" />
+
+          <label class="block text-sm mt-4">Email</label>
+          <input name="email" type="email" required class="mt-1 w-full rounded-md border px-3 py-2" />
+
+          <label class="block text-sm mt-4">Message</label>
+          <textarea name="message" rows="4" required class="mt-1 w-full rounded-md border px-3 py-2"></textarea>
+
+          <div class="mt-4 flex items-center gap-3">
+            <button type="submit" class="px-4 py-2 rounded-md bg-accent text-white">Send</button>
+            <button type="reset" class="px-4 py-2 rounded-md border">Reset</button>
+            <div id="formMsg" class="text-sm text-slate-500"></div>
+          </div>
+        </form>
+
+        <div class="p-6 rounded-lg border bg-white">
+          <h3 class="font-semibold">Quick info</h3>
+          <p class="mt-2 text-slate-600">Open to remote or contract roles. I prefer clear spec and collaborative teams.</p>
+
+          <div class="mt-4 text-sm text-slate-600">
+            <div class="mb-2"><strong>Email:</strong> feisaladen32@gmail.com</div>
+            <div class="mb-2"><strong>GitHub:</strong> <a href="#" class="underline">github.com/https://github.com/Feisaladen</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-6 text-sm text-slate-500 flex items-center justify-between">
+      <div>© <span id="year"></span> Feisal Yakub. All rights reserved.</div>
+      <div>Built with ❤️ • <span class="font-medium">HTML</span>, <span class="font-medium">Tailwind</span>, <span class="font-medium">JavaScript</span></div>
+    </div>
+  </footer>
+
+  <!-- Project Modal (hidden) -->
+  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40">
+    <div class="bg-white rounded-lg max-w-2xl w-full p-6">
+      <button id="closeModal" class="float-right px-2 py-1 rounded border">Close</button>
+      <h3 id="modalTitle" class="text-xl font-bold">Project Title</h3>
+      <p id="modalBody" class="mt-3 text-slate-600">Project details go here.</p>
+    </div>
+  </div>
+
+  <script>
+    // Small interactive scripts
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu (simple)
+    const mobileBtn = document.getElementById('mobileBtn');
+    mobileBtn && mobileBtn.addEventListener('click', () => {
+      alert('Mobile menu: for small screens you can wire up a slide-in nav.');
+    });
+
+    // Set dark mode as default
+    document.documentElement.classList.add('dark');
+    document.body.classList.remove('bg-gradient-to-b','from-white','to-slate-50');
+    document.body.classList.add('bg-slate-900','text-slate-100');
+
+    // Project modal handlers
+    document.querySelectorAll('.projectBtn').forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        const modal = document.getElementById('modal');
+        document.getElementById('modalTitle').textContent = btn.closest('article').querySelector('h3').textContent;
+        document.getElementById('modalBody').textContent = btn.closest('article').querySelector('p').textContent + ' More details, tech stack, challenges and outcomes.';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+    document.getElementById('closeModal').addEventListener('click', () => {
+      const modal = document.getElementById('modal');
+      modal.classList.add('hidden'); modal.classList.remove('flex');
+    });
+
+    // Contact form: example client-side validation and fake send
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const msgEl = document.getElementById('formMsg');
+      msgEl.textContent = 'Sending...';
+      setTimeout(() => {
+        msgEl.textContent = 'Thanks — message sent (demo). I will reply within 2 business days.';
+        form.reset();
+      }, 800);
+    });
+  </script>
+</body>
+</html>
