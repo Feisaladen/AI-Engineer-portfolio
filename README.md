@@ -1,45 +1,34 @@
-🌐 Feisal Aden — AI Engineer Portfolio
 
-A modern, responsive personal portfolio built with HTML, Tailwind CSS, and lightweight JavaScript.
-This website showcases my work as an AI Engineer, including featured AI projects, skills, and background.
+# 🌐 Feisal Aden — AI Engineer Portfolio
 
+A modern, responsive personal portfolio built with **HTML**, **Tailwind CSS**, and lightweight **JavaScript**.  
+This website highlights my work as an **AI Engineer**, featuring AI-powered projects, skills, and experience.
 
-✨ Features
-🎨 Modern UI
+---
 
-Clean and minimal aesthetic
+## ✨ Features
 
-Fully responsive on all devices
+### 🎨 Modern UI
+- Clean and minimal aesthetic  
+- Fully responsive layout  
+- Smooth, polished animations and interactions  
 
-Smooth animations and polished layout
+### 👤 About Me
+- Focused on **AI Engineering** and applied machine learning  
+- Experience with TensorFlow, Gemini API, and Supabase  
+- Passionate about building real-world AI solutions  
 
-👤 About Me
+### 🚀 Featured Projects
+- **Afya-Link** — AI-powered personal health assistant  
+- **M-Restore** — AI-driven soil and land analysis from images  
+- Includes detailed project descriptions, tech stack, and demo links  
 
-Highlights my background as an AI Engineer
+### 🛠️ Built With
+- **HTML5**  
+- **Tailwind CSS CDN**  
+- **JavaScript (Vanilla)**  
+- Mobile-first responsive design  
 
-Experience with TensorFlow, AI APIs, and applied machine learning
+---
 
-Focus on building real-world AI solutions
-
-🚀 Featured Projects
-
-Afya-Link — AI-powered health assistant
-
-M-Restore — AI soil & land analysis from images
-
-Interactive modals with full descriptions and live demo links
-
-🛠️ Built With
-
-HTML5
-
-Tailwind CSS
-
-JavaScript (Vanilla)
-
-Responsive design principles
-
-📂 Project Structure
-portfolio/
-│── index.html        # Main file  
-│── profile img
+ 
