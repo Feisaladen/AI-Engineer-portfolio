@@ -4,6 +4,7 @@
 A modern, responsive personal portfolio built with **HTML**, **Tailwind CSS**, and lightweight **JavaScript**.  
 This website highlights my work as an **AI Engineer**, featuring AI-powered projects, skills, and experience.
 
+live demo https://feisalsite.netlify.app/
 ---
 
 ## ✨ Features
